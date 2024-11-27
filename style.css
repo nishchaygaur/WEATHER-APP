@@ -18,7 +18,7 @@ body {
 	width: 100%;
 	height: 100vh;
 	font-family: 'Montserrat', sans-serif;
-	background: var(--gradient);
+	background-color: #343d4b;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -211,4 +211,129 @@ body {
 
 .location-input:hover {
 	transform: scale(0.95);
+}
+
+.environmental-data, .alerts-panel, .educational-resources {
+    background-color: #222831;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 100px 0;
+    box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.2);
+}
+
+#environmentalChart {
+    width: 100%;
+    height: 150px;
+}
+
+#alertsList, #resourcesList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#alertsList li, #resourcesList li {
+    background-color: #2a3038;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#alertsList li.high {
+    border-left: 5px solid #ff4d4d;
+}
+
+#alertsList li.medium {
+    border-left: 5px solid #ffd700;
+}
+
+#alertsList li.low {
+    border-left: 5px solid #00ff00;
+}
+
+#resourcesList li a {
+    color: #72EDF2;
+    text-decoration: none;
+}
+
+#resourcesList li a:hover {
+    text-decoration: underline;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #222831;
+    padding: 10px 0px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    background-color: #72EDF2;
+    color: #222831;
+}
+
+.page {
+    display: none;
+    padding-top: 60px;
+}
+
+.page.active {
+    display: block;
+}
+
+#environmental .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: auto;
+    padding: 20px;
+}
+
+#environmental .environmental-data {
+    width: 50%;
+    margin-bottom: 0px;
+	
+}
+
+#environmental .alerts-panel,
+#environmental .educational-resources {
+    width: calc(50% - 10px);
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .weather-side, .info-side {
+        width: 100%;
+    }
+
+    #environmental .alerts-panel,
+    #environmental .educational-resources {
+        width: 100%;
+    }
 }
